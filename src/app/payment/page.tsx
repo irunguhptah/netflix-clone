@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -101,12 +101,12 @@ export default function PaymentPage() {
   });
 
   // Get selected plan from localStorage
-  useState(() => {
+  useEffect(() => {
     const savedPlan = localStorage.getItem('selectedPlan');
     if (savedPlan) {
       setSelectedPlan(JSON.parse(savedPlan));
     }
-  });
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
