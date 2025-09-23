@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     outputFileTracingRoot: undefined,
   },
+  images: {
+    domains: ['slelguoygbfzlpylpxfs.supabase.co', 'assets.nflxext.com'],
+  },
 }
 
 module.exports = nextConfig
