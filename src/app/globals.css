@@ -1,0 +1,197 @@
+/* Updated: 2025-09-23T11:58:00.343Z */
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
+  --color-card: #000000;
+  --color-card-foreground: #ffffff;
+
+  --color-popover: #000000;
+  --color-popover-foreground: #ffffff;
+
+  --color-primary: #e50914;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #333333;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #666666;
+  --color-muted-foreground: #999999;
+
+  --color-accent: #2d2d5f;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #333333;
+  --color-input: rgba(0, 0, 0, 0.5);
+  --color-ring: #e50914;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-netflix-red: #e50914;
+  --color-dark-gray: #333333;
+  --color-medium-gray: #666666;
+  --color-light-gray: #999999;
+  --color-dark-purple: #2d2d5f;
+  --color-transparent-black: rgba(0, 0, 0, 0.7);
+
+  --font-netflix-sans: "Netflix Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #333333;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #000000;
+    --card-foreground: #ffffff;
+    --popover: #000000;
+    --popover-foreground: #ffffff;
+    --primary: #e50914;
+    --primary-foreground: #ffffff;
+    --secondary: #333333;
+    --secondary-foreground: #ffffff;
+    --muted: #666666;
+    --muted-foreground: #999999;
+    --accent: #2d2d5f;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #333333;
+    --input: rgba(0, 0, 0, 0.5);
+    --ring: #e50914;
+    --chart-1: #e67e22;
+    --chart-2: #2d8659;
+    --chart-3: #1e3a5f;
+    --chart-4: #f1c40f;
+    --chart-5: #e74c3c;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-netflix-sans);
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    color: var(--foreground);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--foreground);
+  }
+
+  .text-button {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--foreground);
+  }
+
+  .text-caption {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--color-medium-gray);
+  }
+
+  .text-small {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--color-light-gray);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
