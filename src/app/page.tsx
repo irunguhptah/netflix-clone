@@ -9,7 +9,7 @@ import Footer from '@/components/sections/footer';
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <NavigationHeader />
       <main>
         <HeroSection />

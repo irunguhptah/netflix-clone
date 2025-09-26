@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const LanguageIcon = () => (
   <svg
@@ -36,6 +39,9 @@ const CaretDownIcon = () => (
 );
 
 const NavigationHeader = () => {
+  const pathname = usePathname();
+  const hideAuth = pathname?.startsWith("/login");
+
   return (
     <header className="absolute top-0 left-0 right-0 z-20 w-full px-4 sm:px-8 md:px-[3.5rem] pt-5">
       <div className="flex items-center justify-between max-w-[1920px] mx-auto">
@@ -69,19 +75,23 @@ const NavigationHeader = () => {
             </select>
             <CaretDownIcon />
           </div>
-          <Link
-            href="/plans"
-            className="text-sm text-white/90 hover:underline hidden sm:inline"
-          >
-            Plans
-          </Link>
-          <a
-            href="/login"
-            role="button"
-            className="bg-primary text-white text-sm font-medium rounded-[4px] py-1 px-4 leading-normal hover:bg-red-700 transition-colors"
-          >
-            Sign In
-          </a>
+          {!hideAuth && (
+            <>
+              <Link
+                href="/plans"
+                className="text-sm text-white/90 hover:underline hidden sm:inline"
+              >
+                Plans
+              </Link>
+              <a
+                href="/login"
+                role="button"
+                className="bg-primary text-white text-sm font-medium rounded-[4px] py-1 px-4 leading-normal hover:bg-red-700 transition-colors"
+              >
+                Sign In
+              </a>
+            </>
+          )}
         </div>
       </div>
     </header>

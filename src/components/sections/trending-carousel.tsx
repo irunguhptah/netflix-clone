@@ -6,15 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BORDER_GRAY = "rgb(179, 179, 179)";
 
-const trendingItems = [
+const allTrendingItems = [
   { rank: 1, title: "Wednesday", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABY3hif-og_bO_37ovyuTRLEHk5P-s2cdSwXyPX9agKQzyidW7qeVu5TtCu7IQaqFq-48mKF98JMJ-hp_DrsfIAY5iM0cZdlZcvY21KVVCbpjelS9tm4F2s-b4k8mzZlCET2d-5.webp" },
   { rank: 2, title: "Beauty in Black", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABbRJEvKGGbC4rAoI_P9n4fTWxhlSw6tXK-0O2TjCEbYiVxey6vzcUZBRs1Ms4nUPFU-D_5IMWEdH6ucsUZe30q6021Q1Su5qoFrAGyOtMRadM31aYk6CIuVjEftEobMerAR2-11.webp" },
   { rank: 3, title: "Canelo Álvarez vs. Terence Crawford", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABcrhAaNZU6tXbpVoi9LpbMZmjZX22ZfuOwNmuPy5i4quoB8cWiO-67vbTk07rZyX5YtKKci5c0XoFHJ1vphlx0Rau-hgCpnzEfMORMer4uPuTytZw3q4AMK38cPtc4fjKe2e-8.webp" },
   { rank: 4, title: "KPop Demon Hunters", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABSkTqcl4espfr1T2MXY7IPThx8Lsy5TE1CbaqoU2ZDRSBX2rQP7RxEx12O9hfeCx9ARtKpdvyyqkWYhNUbu8VesRfxegOyckS0a083oNizun0WxObhFM4qSMGFxBivs1XlQd-4.webp" },
   { rank: 5, title: "Unknown Number: The High School Catfish", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABWrTjWMrsToh9vAoz8rKrhSSHdJW6bmhL8Lvv63zCy1lo3O1TFqvZH4U80xS1vDJJV00sc97Ntd2b1Y1vh3v4SIs60pAtWC6pottJ80j5h4ITJPEURiTJEH4O_a47L1S0qlG-3.webp" },
   { rank: 6, title: "Happy Gilmore 2", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABQN2HJjk3iwDn4sXHV3QQM2HxYFrCSd1nR-GW8AEuyJz_l4Vg_yjLtNCe2Hhn-utIJ7GqQuGoRTShQDD9crpv_9DZ33RiNfBEho-9.webp" },
-  { rank: 7, title: "28 Years Later", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABY3hif-og_bO_37ovyuTRLEHk5P-s2cdSwXyPX9agKQzyidW7qeVu5TtCu7IQaqFq-48mKF98JMJ-hp_DrsfIAY5iM0cZdlZcvY21KVVCbpjelS9tm4F2s-b4k8mzZlCET2d-5.webp"},
-  { rank: 8, title: "Madea’s Destination Wedding", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABbRJEvKGGbC4rAoI_P9n4fTWxhlSw6tXK-0O2TjCEbYiVxey6vzcUZBRs1Ms4nUPFU-D_5IMWEdH6ucsUZe30q6021Q1Su5qoFrAGyOtMRadM31aYk6CIuVjEftEobMerAR2-11.webp" },
+  { rank: 7, title: "The Diplomat", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABSkTqcl4espfr1T2MXY7IPThx8Lsy5TE1CbaqoU2ZDRSBX2rQP7RxEx12O9hfeCx9ARtKpdvyyqkWYhNUbu8VesRfxegOyckS0a083oNizun0WxObhFM4qSMGFxBivs1XlQd-4.webp" },
+  { rank: 8, title: "Stranger Things", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABWrTjWMrsToh9vAoz8rKrhSSHdJW6bmhL8Lvv63zCy1lo3O1TFqvZH4U80xS1vDJJV00sc97Ntd2b1Y1vh3v4SIs60pAtWC6pottJ80j5h4ITJPEURiTJEH4O_a47L1S0qlG-3.webp" },
+  { rank: 9, title: "The Crown", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABQN2HJjk3iwDn4sXHV3QQM2HxYFrCSd1nR-GW8AEuyJz_l4Vg_yjLtNCe2Hhn-utIJ7GqQuGoRTShQDD9crpv_9DZ33RiNfBEho-9.webp" },
+  { rank: 10, title: "Ozark", imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5206fbfd-7267-4a70-ba9d-cd6766a1f20d-netflix-com/assets/images/AAAABcrhAaNZU6tXbpVoi9LpbMZmjZX22ZfuOwNmuPy5i4quoB8cWiO-67vbTk07rZyX5YtKKci5c0XoFHJ1vphlx0Rau-hgCpnzEfMORMer4uPuTytZw3q4AMK38cPtc4fjKe2e-8.webp" },
 ];
 
 const NetflixIconN = () => (
@@ -24,74 +26,76 @@ const NetflixIconN = () => (
 );
 
 const TrendingCarousel = () => {
-    const carouselRef = React.useRef<HTMLUListElement>(null);
-    const [showLeftArrow, setShowLeftArrow] = React.useState(false);
-    const [showRightArrow, setShowRightArrow] = React.useState(true);
-    const [isHovering, setIsHovering] = React.useState(false);
+    const [currentPage, setCurrentPage] = React.useState(0);
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(allTrendingItems.length / itemsPerPage);
+    
+    const currentItems = allTrendingItems.slice(
+        currentPage * itemsPerPage,
+        (currentPage + 1) * itemsPerPage
+    );
 
-    const handleScroll = React.useCallback(() => {
-        if (carouselRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-            setShowLeftArrow(scrollLeft > 10);
-            setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
-        }
-    }, []);
+    const goToNext = () => {
+        setCurrentPage(prev => (prev + 1) % totalPages);
+    };
 
-    React.useEffect(() => {
-        const carousel = carouselRef.current;
-        if (carousel) {
-            handleScroll();
-            carousel.addEventListener('scroll', handleScroll, { passive: true });
-            return () => carousel.removeEventListener('scroll', handleScroll);
-        }
-    }, [handleScroll]);
-
-    const scroll = (direction: 'left' | 'right') => {
-        if (carouselRef.current) {
-            const scrollAmount = carouselRef.current.clientWidth * 0.8;
-            carouselRef.current.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+    const goToPrev = () => {
+        setCurrentPage(prev => (prev - 1 + totalPages) % totalPages);
     };
 
     return (
-        <section className="py-8 md:py-12 bg-black text-white overflow-hidden">
-            <div className="mx-auto" style={{ paddingLeft: 'min(4vw, 50px)' }}>
-                <h2 className="text-[32px] leading-[40px] font-bold mb-4">Trending Now</h2>
-                <div 
-                    className="relative"
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                >
-                    {showLeftArrow && (
-                        <button onClick={() => scroll('left')} className={`absolute left-0 top-0 h-full w-16 z-20 bg-gradient-to-r from-black to-transparent items-center justify-start hidden md:flex transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'}`} aria-label="Scroll left">
-                           <ChevronLeft className="w-12 h-12 text-white/80 hover:text-white hover:scale-110 transition-transform" />
+        <section className="py-8 md:py-12 bg-black text-white">
+            <div className="max-w-6xl mx-auto px-4">
+                <h2 className="text-[32px] leading-[40px] font-bold mb-4 text-center">Trending Now</h2>
+                <div className="flex items-center justify-center gap-4">
+                    {currentPage > 0 && (
+                        <button 
+                            onClick={goToPrev} 
+                            className="p-2 rounded-full bg-black/50 hover:bg-black/80 transition-colors"
+                            aria-label="Previous page"
+                        >
+                            <ChevronLeft className="w-8 h-8 text-white" />
                         </button>
                     )}
-                    <ul ref={carouselRef} className="flex overflow-x-auto scroll-smooth py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                        {trendingItems.map((item) => (
-                            <li key={item.rank} className="flex-shrink-0 px-1 first:pl-0">
-                                <button className="flex items-end group/item transition-transform duration-300 ease-in-out hover:scale-110 hover:z-10 focus:outline-none">
-                                    <div className="relative w-[105px] h-[239px] flex items-end overflow-hidden">
-                                        <span className="absolute -bottom-10 -left-1 text-[192px] font-bold text-black select-none" aria-hidden="true">{item.rank}</span>
-                                        <span className="absolute -bottom-10 -left-1 text-[192px] font-bold text-transparent select-none" style={{ WebkitTextStroke: `2px ${BORDER_GRAY}` }} aria-hidden="true">{item.rank}</span>
-                                    </div>
-                                    <div className="relative w-[159px] h-[239px] ml-[-4px] rounded-sm overflow-hidden shadow-lg">
+                    
+                    <div className="flex gap-2 py-2">
+                        {currentItems.map((item) => (
+                            <div key={item.rank} className="flex-shrink-0">
+                                <button className="relative group/item transition-transform duration-300 ease-in-out hover:scale-110 focus:outline-none">
+                                    <div className="relative w-[159px] h-[239px] rounded-sm overflow-hidden shadow-lg">
                                         <NetflixIconN />
                                         <Image src={item.imageUrl} alt={item.title} width={159} height={239} className="object-cover" />
+                                        <span className="absolute bottom-2 left-2 text-[80px] font-bold text-black select-none z-20" aria-hidden="true">{item.rank}</span>
+                                        <span className="absolute bottom-2 left-2 text-[80px] font-bold text-transparent select-none z-20" style={{ WebkitTextStroke: `2px ${BORDER_GRAY}` }} aria-hidden="true">{item.rank}</span>
                                     </div>
                                     <span className="sr-only">{item.title}</span>
                                 </button>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
-                    {showRightArrow && (
-                        <button onClick={() => scroll('right')} className={`absolute right-0 top-0 h-full w-16 z-20 bg-gradient-to-l from-black to-transparent items-center justify-end hidden md:flex transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'}`} style={{ paddingRight: 'min(4vw, 50px)'}} aria-label="Scroll right">
-                           <ChevronRight className="w-12 h-12 text-white/80 hover:text-white hover:scale-110 transition-transform" />
+                    </div>
+                    
+                    {currentPage < totalPages - 1 && (
+                        <button 
+                            onClick={goToNext} 
+                            className="p-2 rounded-full bg-black/50 hover:bg-black/80 transition-colors"
+                            aria-label="Next page"
+                        >
+                            <ChevronRight className="w-8 h-8 text-white" />
                         </button>
                     )}
+                </div>
+                
+                <div className="flex justify-center mt-4 gap-2">
+                    {Array.from({ length: totalPages }, (_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setCurrentPage(i)}
+                            className={`w-2 h-2 rounded-full transition-colors ${
+                                i === currentPage ? 'bg-white' : 'bg-white/30'
+                            }`}
+                            aria-label={`Go to page ${i + 1}`}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
